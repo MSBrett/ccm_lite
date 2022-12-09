@@ -1,0 +1,13 @@
+(zipData) =>
+let
+Source =
+        Binary.Decompress(
+                zipData,
+                Compression.GZip
+        ),
+#"Imported" =
+        Csv.Document(Source,[Delimiter=",", Columns=60, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+
+#"Promoted Headers" = Table.PromoteHeaders(#"Imported", [PromoteAllScalars=true])
+in
+#"Promoted Headers"

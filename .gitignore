@@ -1,0 +1,6 @@
+/.DS_Store
+./test
+test.sh
+test.ps1
+*.pbit
+*.pbix
